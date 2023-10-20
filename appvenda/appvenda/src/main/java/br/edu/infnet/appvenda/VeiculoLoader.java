@@ -8,16 +8,17 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appvenda.model.domain.Veiculo;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
 
-@Order(1)
+@Order(2)
 @Component
-public class VendedorLoader implements ApplicationRunner {
+public class VeiculoLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		FileReader fileReader = new FileReader("vendedor.txt");
+		FileReader fileReader = new FileReader("veiculo.txt");
 		BufferedReader leitura = new BufferedReader(fileReader);	
 		String linha = leitura.readLine();
 		
@@ -27,13 +28,17 @@ public class VendedorLoader implements ApplicationRunner {
 		{		
 			campos = linha.split(";");
 			
-			Vendedor v = new Vendedor();
+			Veiculo v = new Veiculo();
 			
-			v.setNome(campos[0]);
-			v.setCpf(campos[1]);
-			v.setEmail(campos[2]);
+			v.setAno(Integer.parseInt(campos[0]));
 			
-			System.out.println("Vendedor: " + v);
+			v.setMarca(campos[1]);
+			
+			v.setPortas(Integer.parseInt(campos[2]));
+			
+			v.setModelo(campos[3]);
+			
+			System.out.println("Veiculo: " + v);
 			
 			linha = leitura.readLine();		
 		}

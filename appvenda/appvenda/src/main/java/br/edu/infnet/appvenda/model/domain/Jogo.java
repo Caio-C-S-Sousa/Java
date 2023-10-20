@@ -5,6 +5,11 @@ public class Jogo {
 	
 	private String tipo;
 	
+	@Override
+	public String toString() {
+		return String.format("%s - %s", plataforma, tipo);
+	}
+	
 	public String getPlataforma() {
 		return plataforma;
 	}

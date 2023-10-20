@@ -1,0 +1,2 @@
+cd;playstation
+cartucho;nitendo

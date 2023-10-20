@@ -7,6 +7,21 @@ public class Veiculo {
 	
 	private int portas;
 	
+	private String modelo;
+	
+	@Override
+	public String toString() {
+		return String.format("%s - %o - %o - %s", marca, portas, ano, modelo);
+	}
+	
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
 	public String getMarca() {
 		return marca;
 	}

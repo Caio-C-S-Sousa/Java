@@ -7,6 +7,12 @@ public class Vendedor {
 	
 	private String email;
 
+	
+	@Override
+	public String toString() {
+		return String.format("%s - %s - %s", nome, cpf, email);
+	}
+	
 	public String getNome() {
 		return nome;
 	}
