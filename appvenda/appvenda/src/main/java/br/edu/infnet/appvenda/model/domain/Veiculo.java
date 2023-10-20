@@ -11,7 +11,7 @@ public class Veiculo {
 	
 	@Override
 	public String toString() {
-		return String.format("%s - %o - %o - %s", marca, portas, ano, modelo);
+		return String.format("%o - %s - %o - %s", ano, marca, portas, modelo);
 	}
 	
 	public String getModelo() {
