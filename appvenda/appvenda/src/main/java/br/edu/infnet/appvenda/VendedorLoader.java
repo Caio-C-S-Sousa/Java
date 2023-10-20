@@ -17,7 +17,7 @@ public class VendedorLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		FileReader fileReader = new FileReader("vendedor.txt");
+		FileReader fileReader = new FileReader("files/vendedor.txt");
 		BufferedReader leitura = new BufferedReader(fileReader);	
 		String linha = leitura.readLine();
 		

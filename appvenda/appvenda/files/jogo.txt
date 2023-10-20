@@ -1,0 +1,2 @@
+1;Crash;true;100;cd;playstation
+2;mario;true;60;cartucho;nitendo

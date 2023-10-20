@@ -18,7 +18,7 @@ public class JogoLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		FileReader fileReader = new FileReader("jogo.txt");
+		FileReader fileReader = new FileReader("files/jogo.txt");
 		BufferedReader leitura = new BufferedReader(fileReader);	
 		String linha = leitura.readLine();
 		
@@ -28,12 +28,16 @@ public class JogoLoader implements ApplicationRunner {
 		{		
 			campos = linha.split(";");
 			
-			Jogo v = new Jogo();
+			Jogo jogo = new Jogo();
 			
-			v.setPlataforma(campos[0]);
-			v.setTipo(campos[1]);
+			jogo.setCodigo(Integer.valueOf(campos[0]));
+			jogo.setDescricao(campos[1]);	
+			jogo.setEstoque(Boolean.valueOf(campos[2]));		
+			jogo.setPreco(Float.valueOf(campos[3]));
+			jogo.setPlataforma(campos[4]);
+			jogo.setTipo(campos[5]);
 			
-			System.out.println("Jogo: " + v);
+			System.out.println("Jogo: " + jogo);
 			
 			linha = leitura.readLine();		
 		}

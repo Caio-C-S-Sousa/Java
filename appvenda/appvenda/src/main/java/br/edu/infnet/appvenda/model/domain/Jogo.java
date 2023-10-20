@@ -1,13 +1,13 @@
 package br.edu.infnet.appvenda.model.domain;
 
-public class Jogo {
+public class Jogo extends Produto {
 	private String plataforma;
 	
 	private String tipo;
 	
 	@Override
 	public String toString() {
-		return String.format("%s - %s", plataforma, tipo);
+		return String.format("%s - %s - %s", super.toString(), plataforma, tipo);
 	}
 	
 	public String getPlataforma() {

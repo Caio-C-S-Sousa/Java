@@ -9,6 +9,11 @@ public class Produto {
 	
 	private boolean estoque;
 
+	@Override
+	public String toString() {
+		return String.format("%d - %s - %.2f - %s", codigo , descricao, preco, estoque);
+	}
+	
 	public String getDescricao() {
 		return descricao;
 	}

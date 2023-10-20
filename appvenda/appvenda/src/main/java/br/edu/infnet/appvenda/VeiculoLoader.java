@@ -18,7 +18,7 @@ public class VeiculoLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		FileReader fileReader = new FileReader("veiculo.txt");
+		FileReader fileReader = new FileReader("files/veiculo.txt");
 		BufferedReader leitura = new BufferedReader(fileReader);	
 		String linha = leitura.readLine();
 		
@@ -30,13 +30,15 @@ public class VeiculoLoader implements ApplicationRunner {
 			
 			Veiculo v = new Veiculo();
 			
-			v.setAno(Integer.parseInt(campos[0]));
+			v.setCodigo(Integer.valueOf(campos[0]));
+			v.setDescricao(campos[1]);	
+			v.setEstoque(Boolean.valueOf(campos[2]));		
+			v.setPreco(Float.valueOf(campos[3]));	
+			v.setAno(Integer.valueOf(campos[4]));	
+			v.setMarca(campos[5]);	
+			v.setPortas(Integer.valueOf(campos[6]));
 			
-			v.setMarca(campos[1]);
-			
-			v.setPortas(Integer.parseInt(campos[2]));
-			
-			v.setModelo(campos[3]);
+			v.setModelo(campos[7]);
 			
 			System.out.println("Veiculo: " + v);
 			
