@@ -1,18 +1,26 @@
 package br.edu.infnet.appvenda.model.domain;
 
+import java.util.List;
+
 public class Vendedor {
 	private String nome;
-	
 	private String cpf;
-	
 	private String email;
-
-	
+	private List<Produto> produtos;
+		
 	@Override
 	public String toString() {
 		return String.format("%s - %s - %s", nome, cpf, email);
 	}
 	
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
+
 	public String getNome() {
 		return nome;
 	}

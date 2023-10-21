@@ -2,20 +2,26 @@ package br.edu.infnet.appvenda.model.domain;
 
 public class Veiculo extends Produto {
 	private String marca;
-	
 	private int ano;
-	
 	private int portas;
-	
 	private String modelo;
+	private String chassi;
 	
 	@Override
 	public String toString() {
-		return String.format("%s - %d - %s - %d - %s", super.toString(), ano, marca, portas, modelo);
+		return String.format("%s - %s - %d - %s - %d - %s", super.toString(), chassi, ano, marca, portas, modelo);
 	}
 	
 	public String getModelo() {
 		return modelo;
+	}
+
+	public String getChassi() {
+		return chassi;
+	}
+
+	public void setChassi(String chassi) {
+		this.chassi = chassi;
 	}
 
 	public void setModelo(String modelo) {

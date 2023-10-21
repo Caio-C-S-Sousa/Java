@@ -1,2 +1,2 @@
-1;Crash;true;100;cd;playstation
-2;mario;true;60;cartucho;nitendo
+1;Acao;true;100;Crash;cd;playstation
+2;Aventura;true;60;Mario;cartucho;nitendo

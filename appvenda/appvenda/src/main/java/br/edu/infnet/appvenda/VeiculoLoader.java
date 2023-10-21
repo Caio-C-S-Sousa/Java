@@ -3,18 +3,25 @@ package br.edu.infnet.appvenda;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appvenda.model.domain.Produto;
 import br.edu.infnet.appvenda.model.domain.Veiculo;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
+import br.edu.infnet.appvenda.model.service.ProdutoService;
+import br.edu.infnet.appvenda.model.service.VeiculoService;
 
 @Order(2)
 @Component
 public class VeiculoLoader implements ApplicationRunner {
 
+	@Autowired
+	private VeiculoService veiculoService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
@@ -30,21 +37,24 @@ public class VeiculoLoader implements ApplicationRunner {
 			
 			Veiculo v = new Veiculo();
 			
-			v.setCodigo(Integer.valueOf(campos[0]));
-			v.setDescricao(campos[1]);	
-			v.setEstoque(Boolean.valueOf(campos[2]));		
-			v.setPreco(Float.valueOf(campos[3]));	
-			v.setAno(Integer.valueOf(campos[4]));	
-			v.setMarca(campos[5]);	
-			v.setPortas(Integer.valueOf(campos[6]));
+			v.setChassi(campos[0]);
+			v.setCodigo(Integer.valueOf(campos[1]));
+			v.setDescricao(campos[2]);	
+			v.setEstoque(Boolean.valueOf(campos[3]));		
+			v.setPreco(Float.valueOf(campos[4]));	
+			v.setAno(Integer.valueOf(campos[5]));	
+			v.setMarca(campos[6]);	
+			v.setPortas(Integer.valueOf(campos[7]));	
+			v.setModelo(campos[8]);
 			
-			v.setModelo(campos[7]);
-			
-			System.out.println("Veiculo: " + v);
+			veiculoService.Include(v);
 			
 			linha = leitura.readLine();		
 		}
 		
+		for(Veiculo v: veiculoService.ObterLista()) {
+			System.out.println("Veiculo: " + v);
+		}
 		
 		leitura.close();
 	}

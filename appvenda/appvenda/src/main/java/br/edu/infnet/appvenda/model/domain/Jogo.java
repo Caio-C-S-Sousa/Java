@@ -1,18 +1,28 @@
 package br.edu.infnet.appvenda.model.domain;
 
 public class Jogo extends Produto {
+	private String nome;
+	
 	private String plataforma;
 	
 	private String tipo;
 	
 	@Override
 	public String toString() {
-		return String.format("%s - %s - %s", super.toString(), plataforma, tipo);
+		return String.format("%s - %s - %s - %s", super.toString(), nome, plataforma, tipo);
 	}
 	
 	public String getPlataforma() {
 		return plataforma;
 	}
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public void setPlataforma(String plataforma) {
 		this.plataforma = plataforma;
 	}
