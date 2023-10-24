@@ -2,7 +2,16 @@ package br.edu.infnet.appvenda.model.domain;
 
 import java.util.List;
 
-public class Vendedor {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity // Transforma vendedor em tabela
+@Table(name = "TVendedor") // Nome da tabela no banco
+public class Vendedor 
+{
+	@Id
+	private Integer id;
 	private String nome;
 	private String cpf;
 	private String email;
