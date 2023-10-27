@@ -27,7 +27,7 @@ public class Vendedor
 		
 	@Override
 	public String toString() {
-		return String.format("%s - %s - %s", nome, cpf, email);
+		return String.format("%d, %s - %s - %s",id , nome, cpf, email);
 	}
 	
 	public List<Produto> getProdutos() {

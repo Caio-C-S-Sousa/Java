@@ -25,5 +25,10 @@ public class ProdutoService {
 	public Collection<Produto> ObterLista() {	
 		return (Collection<Produto>)produtoRepository.findAll();
 		//return mapaProduto.values();
+	}
+	
+	public Collection<Produto> ObterLista(Integer vendedorId) {	
+		return (Collection<Produto>)produtoRepository.obterLista(vendedorId) ;
+		//return mapaProduto.values();
 	}	
 }

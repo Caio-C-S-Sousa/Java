@@ -49,7 +49,7 @@ public class ProdutoLoader implements ApplicationRunner {
 		for(Produto p: produtoService.ObterLista()) {
 			System.out.println("Produto: " + p);	
 		}
-			
+		
 		leitura.close();
 	}
 	
