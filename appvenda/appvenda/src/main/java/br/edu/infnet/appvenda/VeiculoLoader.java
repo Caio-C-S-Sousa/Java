@@ -47,6 +47,11 @@ public class VeiculoLoader implements ApplicationRunner {
 			v.setPortas(Integer.valueOf(campos[7]));	
 			v.setModelo(campos[8]);
 			
+			Vendedor vendedor = new Vendedor();
+			vendedor.setId(1);
+			
+			v.setVendedor(vendedor);
+			
 			veiculoService.Include(v);
 			
 			linha = leitura.readLine();		

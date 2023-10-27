@@ -8,6 +8,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import br.edu.infnet.appvenda.model.domain.Jogo;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.JogoService;
 
 @Order(3)
@@ -40,6 +41,11 @@ public class JogoLoader implements ApplicationRunner {
 			jogo.setNome(campos[4]);
 			jogo.setPlataforma(campos[5]);
 			jogo.setTipo(campos[6]);
+			
+			Vendedor vendedor = new Vendedor();
+			vendedor.setId(1);
+			
+			jogo.setVendedor(vendedor);
 			
 			jogoService.Include(jogo);
 					
