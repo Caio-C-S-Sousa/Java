@@ -55,18 +55,6 @@ public class ProdutoLoader implements ApplicationRunner {
 		for(Produto produto: produtoService.obterLista()) {
 			System.out.println("Produto: " + produto);			
 		}
-		
-		
-		/*for(Vendedor vendedor: vendedorService.ObterLista()) {				
-			//Integer vendedorId = vendedor.getId();
-			
-			//System.out.println("Vendedor ID: " + vendedorId);	
-			
-			for(Produto p: produtoService.obterLista(1)) 
-			{
-				System.out.println("Produto2: " + p);	
-			}
-		}*/
 	}
 	
 	
@@ -80,10 +68,10 @@ public class ProdutoLoader implements ApplicationRunner {
 		jogo.setPlataforma(campos[5]);
 		jogo.setTipo(campos[6]);
 		
-		//Vendedor vendedor = new Vendedor();
-		//vendedor = vendedorService.obter(1);
+		Vendedor vendedor = new Vendedor();
+		vendedor = vendedorService.obter(1);
 		
-		//jogo.setVendedor(vendedor);
+		jogo.setVendedor(vendedor);
 		
 		produtoService.include(jogo);
 	}
@@ -100,10 +88,10 @@ public class ProdutoLoader implements ApplicationRunner {
 		v.setPortas(Integer.valueOf(campos[7]));	
 		v.setModelo(campos[8]);
 		
-		//Vendedor vendedor = new Vendedor();
-		//vendedor = vendedorService.obter(1);
+		Vendedor vendedor = new Vendedor();
+		vendedor = vendedorService.obter(1);
 		
-		//v.setVendedor(vendedor);
+		v.setVendedor(vendedor);
 		
 		produtoService.include(v);
 	}

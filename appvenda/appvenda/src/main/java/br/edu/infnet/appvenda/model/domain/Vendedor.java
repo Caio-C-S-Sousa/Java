@@ -22,8 +22,7 @@ public class Vendedor
 	private String cpf;
 	private String email;
 	
-	//@OneToMany(mappedBy = "vendedor",fetch = FetchType.LAZY)
-	@OneToMany(mappedBy = "vendedor")
+	@OneToMany
 	private List<Produto> produtos;
 		
 	@Override

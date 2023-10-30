@@ -13,19 +13,15 @@ import br.edu.infnet.appvenda.model.repository.JogoRepository;
 import br.edu.infnet.appvenda.model.repository.VendedorRepository;
 
 @Service
-public class JogoService {
-	//private Map<Integer, Jogo> mapVeiculo = new HashMap<Integer, Jogo>();
-	
+public class JogoService {	
 	@Autowired
 	private JogoRepository jogoRepository;
 	
 	public void Include(Jogo j) {
 		jogoRepository.save(j);
-		//mapVeiculo.put(j.getCodigo(), j);	
 	}
 	
 	public Collection<Jogo> ObterLista() {	
 		return (Collection<Jogo>)jogoRepository.findAll();
-		//return mapVeiculo.values();
 	}	
 }

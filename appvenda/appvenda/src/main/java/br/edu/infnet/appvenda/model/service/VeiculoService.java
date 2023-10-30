@@ -15,18 +15,14 @@ import br.edu.infnet.appvenda.model.repository.VeiculoRepository;
 
 @Service
 public class VeiculoService {
-	//private Map<Integer, Veiculo> mapVeiculo = new HashMap<Integer, Veiculo>();
-	
 	@Autowired
 	private VeiculoRepository veiculoRepository;
 	
 	public void Include(Veiculo v) {
 		veiculoRepository.save(v);
-		//mapVeiculo.put(v.getCodigo(), v);	
 	}
 	
 	public Collection<Veiculo> ObterLista() {	
 		return (Collection<Veiculo>)veiculoRepository.findAll();		
-		//return mapVeiculo.values();
 	}	
 }

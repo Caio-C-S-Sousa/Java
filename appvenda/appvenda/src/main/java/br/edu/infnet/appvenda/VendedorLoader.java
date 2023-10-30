@@ -46,7 +46,7 @@ public class VendedorLoader implements ApplicationRunner {
 		
 		System.out.println("Finaliza Processamento Vendedor");
 		
-		for(Vendedor vendedor: vendedorService.ObterLista()) {
+		for(Vendedor vendedor: vendedorService.obterLista()) {
 			System.out.println("Vendedor: " + vendedor);	
 		}
 			

@@ -8,13 +8,22 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import br.edu.infnet.appvenda.model.domain.Jogo;
+import br.edu.infnet.appvenda.model.domain.Produto;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.JogoService;
+import br.edu.infnet.appvenda.model.service.ProdutoService;
+import br.edu.infnet.appvenda.model.service.VendedorService;
 
 @Order(4)
 @Component
 public class JogoLoader implements ApplicationRunner {
 
+	@Autowired
+	private ProdutoService produtoService;
+	
+	@Autowired
+	private VendedorService vendedorService;
+	
 	@Autowired
 	private JogoService jogoService;
 	
@@ -51,11 +60,20 @@ public class JogoLoader implements ApplicationRunner {
 					
 			linha = leitura.readLine();		
 		}
+		leitura.close();
 		
 		for(Jogo jogo: jogoService.ObterLista()) {
 			System.out.println("Jogo: " + jogo);	
 		}
+			
+		var listProduto = produtoService.obterLista();
 		
-		leitura.close();
+		System.out.println("Produto Count: " + listProduto.size());	
+		
+		for(Produto produto: listProduto) {
+			System.out.println("Produto: " + produto);	
+								
+			System.out.println("Vendedor do produto: " + vendedorService.obter(produto.getVendedor().getId()));	
+		}	
 	}
 }

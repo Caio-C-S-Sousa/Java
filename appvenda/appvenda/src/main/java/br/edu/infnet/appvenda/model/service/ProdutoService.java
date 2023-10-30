@@ -12,8 +12,6 @@ import br.edu.infnet.appvenda.model.repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {
-	//private Map<Integer, Produto> mapaProduto = new HashMap<Integer, Produto>();
-	
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	
@@ -25,8 +23,7 @@ public class ProdutoService {
 		return (Collection<Produto>)produtoRepository.findAll();
 	}
 	
-	/*public Collection<Produto> obterLista(Integer vendedorId) {	
+	public Collection<Produto> obterLista(Integer vendedorId) {	
 		return (Collection<Produto>)produtoRepository.obterLista(vendedorId) ;
-		//return mapaProduto.values();
-	}*/	
+	}
 }

@@ -12,5 +12,5 @@ import br.edu.infnet.appvenda.model.domain.Vendedor;
 public interface VendedorRepository extends CrudRepository<Vendedor, Integer>
 {
 	@Query("from Vendedor v where v.id=:vendedorId")
-	public Vendedor ObterVendedor(Integer vendedorId);
+	public Vendedor obterVendedor(Integer vendedorId);
 }
