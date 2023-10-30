@@ -17,18 +17,16 @@ public class ProdutoService {
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	
-	public void Include(Produto p) {
+	public void include(Produto p) {
 		produtoRepository.save(p);
-		//mapaProduto.put(p.getCodigo(), p);	
 	}
 	
-	public Collection<Produto> ObterLista() {	
+	public Collection<Produto> obterLista() {	
 		return (Collection<Produto>)produtoRepository.findAll();
-		//return mapaProduto.values();
 	}
 	
-	public Collection<Produto> ObterLista(Integer vendedorId) {	
+	/*public Collection<Produto> obterLista(Integer vendedorId) {	
 		return (Collection<Produto>)produtoRepository.obterLista(vendedorId) ;
 		//return mapaProduto.values();
-	}	
+	}*/	
 }

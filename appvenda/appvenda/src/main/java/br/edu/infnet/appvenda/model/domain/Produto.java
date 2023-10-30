@@ -1,6 +1,7 @@
 package br.edu.infnet.appvenda.model.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,7 +23,9 @@ public class Produto {
 	private int codigo;	
 	private float preco;	
 	private boolean estoque;
-	@ManyToOne
+	
+	//@ManyToOne(fetch = FetchType.EAGER, optional = true)
+	@ManyToOne(optional = true)
 	@JoinColumn(name = "idVendedor")
 	private Vendedor vendedor;
 	

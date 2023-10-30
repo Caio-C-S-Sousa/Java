@@ -11,7 +11,7 @@ import br.edu.infnet.appvenda.model.domain.Jogo;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.JogoService;
 
-@Order(3)
+@Order(4)
 @Component
 public class JogoLoader implements ApplicationRunner {
 

@@ -12,13 +12,17 @@ import br.edu.infnet.appvenda.model.domain.Produto;
 import br.edu.infnet.appvenda.model.domain.Veiculo;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
+import br.edu.infnet.appvenda.model.service.VendedorService;
 
-@Order(1)
+@Order(2)
 @Component
 public class ProdutoLoader implements ApplicationRunner {
 	
 	@Autowired
 	private ProdutoService produtoService;
+	
+	@Autowired
+	private VendedorService vendedorService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -28,8 +32,6 @@ public class ProdutoLoader implements ApplicationRunner {
 		String linha = leitura.readLine();
 		
 		String[] campos = null;
-		
-		System.out.println("Inicia Processamento Produtos");	
 		
 		while(linha != null)
 		{		
@@ -44,13 +46,27 @@ public class ProdutoLoader implements ApplicationRunner {
 			linha = leitura.readLine();		
 		}
 		
-		System.out.println("Finaliza Processamento Produtos");
+		leitura.close();
+
+		var listProduto = produtoService.obterLista();
 		
-		for(Produto p: produtoService.ObterLista()) {
-			System.out.println("Produto: " + p);	
+		System.out.println("Produto Count: " + listProduto.size());	
+		
+		for(Produto produto: produtoService.obterLista()) {
+			System.out.println("Produto: " + produto);			
 		}
 		
-		leitura.close();
+		
+		/*for(Vendedor vendedor: vendedorService.ObterLista()) {				
+			//Integer vendedorId = vendedor.getId();
+			
+			//System.out.println("Vendedor ID: " + vendedorId);	
+			
+			for(Produto p: produtoService.obterLista(1)) 
+			{
+				System.out.println("Produto2: " + p);	
+			}
+		}*/
 	}
 	
 	
@@ -64,12 +80,12 @@ public class ProdutoLoader implements ApplicationRunner {
 		jogo.setPlataforma(campos[5]);
 		jogo.setTipo(campos[6]);
 		
-		Vendedor vendedor = new Vendedor();
-		vendedor.setId(1);
+		//Vendedor vendedor = new Vendedor();
+		//vendedor = vendedorService.obter(1);
 		
-		jogo.setVendedor(vendedor);
+		//jogo.setVendedor(vendedor);
 		
-		produtoService.Include(jogo);
+		produtoService.include(jogo);
 	}
 	
 	private void AddVeiculo(String[] campos) {	
@@ -84,11 +100,11 @@ public class ProdutoLoader implements ApplicationRunner {
 		v.setPortas(Integer.valueOf(campos[7]));	
 		v.setModelo(campos[8]);
 		
-		Vendedor vendedor = new Vendedor();
-		vendedor.setId(1);
+		//Vendedor vendedor = new Vendedor();
+		//vendedor = vendedorService.obter(1);
 		
-		v.setVendedor(vendedor);
+		//v.setVendedor(vendedor);
 		
-		produtoService.Include(v);
+		produtoService.include(v);
 	}
 }

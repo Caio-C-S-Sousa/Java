@@ -15,7 +15,7 @@ import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
 import br.edu.infnet.appvenda.model.service.VeiculoService;
 
-@Order(2)
+@Order(3)
 @Component
 public class VeiculoLoader implements ApplicationRunner {
 
