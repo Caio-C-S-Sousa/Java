@@ -26,10 +26,10 @@ public class Vendedor
 	@Size(min = 2, max = 50)
 	private String nome;
 	@Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")
-	@Column(unique = true)
+	//@Column(unique = true)
 	private String cpf;
 	@Size(min = 2, max = 50)
-	@Column(unique = true)
+	//@Column(unique = true)
 	private String email;
 	
 	@OneToMany

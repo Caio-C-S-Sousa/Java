@@ -1,2 +1,3 @@
 Caio Sousa;000.111.222-33;caio@gmail.com
 Rafael Silva;444.555.666-77;Rafa@hotmail.com
+Rafael Silva;111.555.666-77;Rafa2@hotmail.com
