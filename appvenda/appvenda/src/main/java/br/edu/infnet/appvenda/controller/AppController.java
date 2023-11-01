@@ -39,10 +39,10 @@ public class AppController
 		var listagem = vendedorService.obterLista();
 		
 		model.addAttribute("listagem", listagem);
+		model.addAttribute("titulo", "Vendedores");
 				
 		return showHome(model);	
 	}
-	
 	
 	@GetMapping(value = "/produto/lista")
 	public String obterListaProduto(Model model) 
@@ -50,6 +50,7 @@ public class AppController
 		var listagem = produtoService.obterLista();
 		
 		model.addAttribute("listagem", listagem);
+		model.addAttribute("titulo", "Produtos");
 				
 		return showHome(model);	
 	}
@@ -60,6 +61,7 @@ public class AppController
 		var listagem = jogoService.obterLista();
 		
 		model.addAttribute("listagem", listagem);
+		model.addAttribute("titulo", "Jogos");
 				
 		return showHome(model);	
 	}
@@ -70,8 +72,8 @@ public class AppController
 		var listagem = veiculoService.obterLista();
 		
 		model.addAttribute("listagem", listagem);
+		model.addAttribute("titulo", "Veiculos");
 				
 		return showHome(model);	
-	}
-	
+	}	
 }

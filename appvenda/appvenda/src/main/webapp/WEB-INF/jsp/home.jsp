@@ -44,7 +44,7 @@
 			<table class="table">
 				<thead class="table-dark">
 					<tr>
-					  <th>Itens</th>
+					  <th>${titulo}</th>
 					</tr>
 				</thead>
 				<tbody>
