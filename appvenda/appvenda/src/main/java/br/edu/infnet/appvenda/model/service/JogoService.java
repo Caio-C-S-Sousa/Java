@@ -17,11 +17,15 @@ public class JogoService {
 	@Autowired
 	private JogoRepository jogoRepository;
 	
-	public void Include(Jogo j) {
+	public void include(Jogo j) {
 		jogoRepository.save(j);
 	}
 	
-	public Collection<Jogo> ObterLista() {	
+	public Collection<Jogo> obterLista() {	
 		return (Collection<Jogo>)jogoRepository.findAll();
+	}	
+	
+	public long size() {	
+		return jogoRepository.count();
 	}	
 }

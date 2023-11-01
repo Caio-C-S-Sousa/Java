@@ -18,11 +18,15 @@ public class VeiculoService {
 	@Autowired
 	private VeiculoRepository veiculoRepository;
 	
-	public void Include(Veiculo v) {
+	public void include(Veiculo v) {
 		veiculoRepository.save(v);
 	}
 	
-	public Collection<Veiculo> ObterLista() {	
+	public Collection<Veiculo> obterLista() {	
 		return (Collection<Veiculo>)veiculoRepository.findAll();		
+	}	
+	
+	public long size() {	
+		return veiculoRepository.count();
 	}	
 }

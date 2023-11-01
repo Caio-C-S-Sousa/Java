@@ -56,13 +56,13 @@ public class JogoLoader implements ApplicationRunner {
 			
 			jogo.setVendedor(vendedor);
 			
-			jogoService.Include(jogo);
+			jogoService.include(jogo);
 					
 			linha = leitura.readLine();		
 		}
 		leitura.close();
 		
-		for(Jogo jogo: jogoService.ObterLista()) {
+		for(Jogo jogo: jogoService.obterLista()) {
 			System.out.println("Jogo: " + jogo);	
 		}
 			

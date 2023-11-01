@@ -30,4 +30,8 @@ public class VendedorService {
 	public Vendedor obter(Integer vendedorId) {	
 		return vendedorRepository.obterVendedor(vendedorId);
 	}	
+	
+	public long size() {	
+		return vendedorRepository.count();
+	}	
 }

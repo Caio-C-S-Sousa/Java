@@ -52,12 +52,12 @@ public class VeiculoLoader implements ApplicationRunner {
 			
 			v.setVendedor(vendedor);
 			
-			veiculoService.Include(v);
+			veiculoService.include(v);
 			
 			linha = leitura.readLine();		
 		}
 		
-		for(Veiculo v: veiculoService.ObterLista()) {
+		for(Veiculo v: veiculoService.obterLista()) {
 			System.out.println("Veiculo: " + v);
 		}
 		
