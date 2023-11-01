@@ -2,6 +2,7 @@ package br.edu.infnet.appvenda.model.domain;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,16 +11,25 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity // Transforma vendedor em tabela
-@Table(name = "TVendedor") // Nome da tabela no banco
+//@Table(name = "TVendedor") // Nome da tabela no banco
+@Table(name = "TVendedor", uniqueConstraints = {@UniqueConstraint(columnNames = {"cpf"}),@UniqueConstraint(columnNames = {"email"})})
 public class Vendedor 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@Size(min = 2, max = 50)
 	private String nome;
+	@Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")
+	@Column(unique = true)
 	private String cpf;
+	@Size(min = 2, max = 50)
+	@Column(unique = true)
 	private String email;
 	
 	@OneToMany

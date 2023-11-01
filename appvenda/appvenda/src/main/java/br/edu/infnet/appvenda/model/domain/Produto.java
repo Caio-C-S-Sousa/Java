@@ -1,5 +1,6 @@
 package br.edu.infnet.appvenda.model.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,18 +11,27 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 @Entity
-@Table(name = "TProduto")
+//@Table(name = "TProduto")
+@Table(name = "TProduto", uniqueConstraints = {@UniqueConstraint(columnNames = {"codigo"})})
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Produto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;	
-	private String descricao;	
+	@NotNull
+	private String descricao;
+	@Positive
 	private int codigo;	
+	@NotNull
 	private float preco;	
+	@NotNull
+	@Column(columnDefinition = "boolean default false")
 	private boolean estoque;
 	
 	@ManyToOne
