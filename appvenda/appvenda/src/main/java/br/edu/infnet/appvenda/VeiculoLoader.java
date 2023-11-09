@@ -8,11 +8,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-
-import br.edu.infnet.appvenda.model.domain.Produto;
 import br.edu.infnet.appvenda.model.domain.Veiculo;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
-import br.edu.infnet.appvenda.model.service.ProdutoService;
 import br.edu.infnet.appvenda.model.service.VeiculoService;
 
 @Order(3)

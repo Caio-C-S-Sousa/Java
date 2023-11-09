@@ -2,15 +2,12 @@ package br.edu.infnet.appvenda;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-
 import javax.validation.ConstraintViolationException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-
 import br.edu.infnet.appvenda.model.domain.Endereco;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.VendedorService;
