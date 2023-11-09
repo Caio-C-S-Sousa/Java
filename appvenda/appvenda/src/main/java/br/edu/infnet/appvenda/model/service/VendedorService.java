@@ -1,15 +1,10 @@
 package br.edu.infnet.appvenda.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
-
-import br.edu.infnet.appvenda.model.domain.Produto;
+import br.edu.infnet.appvenda.clients.IEnderecoClient;
+import br.edu.infnet.appvenda.model.domain.Endereco;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.repository.VendedorRepository;
 
@@ -18,8 +13,15 @@ public class VendedorService {
 	
 	@Autowired
 	private VendedorRepository vendedorRepository;
-	
+	@Autowired
+	private IEnderecoClient enderecoClient;
+
 	public void Include(Vendedor v) {
+		
+		Endereco endereco = enderecoClient.buscarCep(v.getEndereco().getCep());
+		
+		v.setEndereco(endereco);
+		
 		vendedorRepository.save(v);
 	}
 	
