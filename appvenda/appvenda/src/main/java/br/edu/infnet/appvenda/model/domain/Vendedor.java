@@ -2,7 +2,7 @@ package br.edu.infnet.appvenda.model.domain;
 
 import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Pattern;
@@ -30,15 +31,17 @@ public class Vendedor
 	@Size(min = 2, max = 50)
 	//@Column(unique = true)
 	private String email;	
-	private String cep;	
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idVendedor")
 	private List<Produto> produtos;
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idEndereco")
+	private Endereco endereco;
 		
 	@Override
 	public String toString() {
 		return String.format("id: %d - nome: %s - cpf: %s - email: %s, endereço: %s",
-				              id , nome, cpf, email, cep);
+				              id , nome, cpf, email, endereco);
 	}
 	
 	public List<Produto> getProdutos() {
@@ -81,11 +84,10 @@ public class Vendedor
 		return id;
 	}
 	
-	public String getCep() {
-		return cep;
+	public Endereco getEndereco() {
+		return endereco;
 	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 }

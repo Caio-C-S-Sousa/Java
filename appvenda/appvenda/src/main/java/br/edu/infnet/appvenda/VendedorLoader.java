@@ -10,6 +10,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+
+import br.edu.infnet.appvenda.model.domain.Endereco;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.VendedorService;
 
@@ -40,8 +42,7 @@ public class VendedorLoader implements ApplicationRunner {
 			v.setNome(campos[0]);
 			v.setCpf(campos[1]);
 			v.setEmail(campos[2]);
-			v.setCep(campos[3]);
-						
+			v.setEndereco(new Endereco(campos[3]));
 			try {
 				vendedorService.Include(v);		
 			}catch(ConstraintViolationException ex) {
