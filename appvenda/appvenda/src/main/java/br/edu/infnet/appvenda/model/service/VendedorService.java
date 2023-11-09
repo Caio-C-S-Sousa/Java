@@ -34,4 +34,8 @@ public class VendedorService {
 	public long size() {	
 		return vendedorRepository.count();
 	}	
+	
+	public void excluir(Integer id) {		
+		vendedorRepository.deleteById(id);
+	}	
 }
