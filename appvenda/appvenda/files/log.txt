@@ -1,4 +1,4 @@
-Nov 08, 2023 10:34:50 PM br.edu.infnet.appvenda.FileLogger logException
+Nov 08, 2023 10:57:27 PM br.edu.infnet.appvenda.FileLogger logException
 SEVERE: VENDEDOR: id: null - nome: Caio Sousa - cpf: 000.111.2122-33 - email: caio@gmail.com, endereço: 20010020 - Validation failed for classes [br.edu.infnet.appvenda.model.domain.Vendedor] during persist time for groups [javax.validation.groups.Default, ]
 List of constraint violations:[
 	ConstraintViolationImpl{interpolatedMessage='must match "\d{3}\.\d{3}\.\d{3}-\d{2}"', propertyPath=cpf, rootBeanClass=class br.edu.infnet.appvenda.model.domain.Vendedor, messageTemplate='{javax.validation.constraints.Pattern.message}'}

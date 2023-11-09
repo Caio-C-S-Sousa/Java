@@ -16,11 +16,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 @Entity
-//@Table(name = "TProduto")
-@Table(name = "TProduto", uniqueConstraints = {@UniqueConstraint(columnNames = {"codigo"})})
+@Table(name = "TProduto")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Produto {
-	
+public class Produto {	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;	
@@ -32,8 +30,7 @@ public class Produto {
 	private float preco;	
 	@NotNull
 	@Column(columnDefinition = "boolean default false")
-	private boolean estoque;
-	
+	private boolean estoque;	
 	@ManyToOne
 	@JoinColumn(name = "idVendedor")
 	private Vendedor vendedor;

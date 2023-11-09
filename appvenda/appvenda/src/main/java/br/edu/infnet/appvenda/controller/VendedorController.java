@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import br.edu.infnet.appvenda.model.service.VendedorService;
 
@@ -16,10 +17,10 @@ public class VendedorController {
 	private VendedorService vendedorService;
 	
 	@GetMapping(value = "/vendedor/{id}/excluir")
-	public String excluir(Integer id) {
+	public String excluir(@PathVariable Integer id) {
 		 vendedorService.excluir(id);	
 		 
-		 return null;
+		 return "redirect:/vendedor/lista";
 	}
 	
 	@GetMapping(value = "/vendedor/lista")
@@ -27,6 +28,7 @@ public class VendedorController {
 	{
 		var listagem = vendedorService.obterLista();
 		
+		model.addAttribute("rota", "vendedor");
 		model.addAttribute("listagem", listagem);
 		model.addAttribute("titulo", "Vendedores");
 				

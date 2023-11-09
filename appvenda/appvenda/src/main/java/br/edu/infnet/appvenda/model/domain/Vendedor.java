@@ -16,7 +16,6 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity // Transforma vendedor em tabela
-//@Table(name = "TVendedor") // Nome da tabela no banco
 @Table(name = "TVendedor", uniqueConstraints = {@UniqueConstraint(columnNames = {"cpf"}),@UniqueConstraint(columnNames = {"email"})})
 public class Vendedor 
 {
@@ -32,8 +31,8 @@ public class Vendedor
 	//@Column(unique = true)
 	private String email;	
 	private String cep;	
-	@OneToMany
-	//@JoinColumn(name="idVendedor")
+	@OneToMany(fetch = FetchType.EAGER)
+	@JoinColumn(name = "idVendedor")
 	private List<Produto> produtos;
 		
 	@Override
