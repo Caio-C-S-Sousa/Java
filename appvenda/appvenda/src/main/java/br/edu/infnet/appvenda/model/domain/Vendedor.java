@@ -33,11 +33,13 @@ public class Vendedor
 	private String email;	
 	private String cep;	
 	@OneToMany
+	//@JoinColumn(name="idVendedor")
 	private List<Produto> produtos;
 		
 	@Override
 	public String toString() {
-		return String.format("id: %d - nome: %s - cpf: %s - email: %s, endereço: %s - produtos:",id , nome, cpf, email, cep);
+		return String.format("id: %d - nome: %s - cpf: %s - email: %s, endereço: %s",
+				              id , nome, cpf, email, cep);
 	}
 	
 	public List<Produto> getProdutos() {
