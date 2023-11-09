@@ -30,14 +30,14 @@ public class Vendedor
 	private String cpf;
 	@Size(min = 2, max = 50)
 	//@Column(unique = true)
-	private String email;
-	
+	private String email;	
+	private String cep;	
 	@OneToMany
 	private List<Produto> produtos;
 		
 	@Override
 	public String toString() {
-		return String.format("%d, %s - %s - %s",id , nome, cpf, email);
+		return String.format("id: %d - nome: %s - cpf: %s - email: %s, endereço: %s - produtos:",id , nome, cpf, email, cep);
 	}
 	
 	public List<Produto> getProdutos() {
@@ -78,5 +78,13 @@ public class Vendedor
 	
 	public Integer getId() {
 		return id;
+	}
+	
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 }

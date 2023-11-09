@@ -38,6 +38,7 @@ public class VendedorLoader implements ApplicationRunner {
 			v.setNome(campos[0]);
 			v.setCpf(campos[1]);
 			v.setEmail(campos[2]);
+			v.setCep(campos[3]);
 			
 			vendedorService.Include(v);
 			
