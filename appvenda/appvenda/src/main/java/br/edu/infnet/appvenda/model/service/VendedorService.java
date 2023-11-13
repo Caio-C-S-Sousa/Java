@@ -2,6 +2,7 @@ package br.edu.infnet.appvenda.model.service;
 
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import br.edu.infnet.appvenda.clients.IEnderecoClient;
 import br.edu.infnet.appvenda.model.domain.Endereco;
@@ -26,7 +27,7 @@ public class VendedorService {
 	}
 	
 	public Collection<Vendedor> obterLista() {		
-		 return (Collection<Vendedor>)vendedorRepository.findAll();
+		 return (Collection<Vendedor>)vendedorRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
 	}	
 	
 	public Vendedor obter(Integer vendedorId) {	
@@ -39,5 +40,9 @@ public class VendedorService {
 	
 	public void excluir(Integer id) {		
 		vendedorRepository.deleteById(id);
+	}	
+	
+	public Vendedor pesquisar(String cpf) {	
+		return vendedorRepository.findByCpf(cpf);
 	}	
 }
