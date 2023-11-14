@@ -33,4 +33,8 @@ public class VeiculoService {
 	public void excluir(Integer id) {		
 		veiculoRepository.deleteById(id);
 	}	
+	
+	public Veiculo pesquisar(String marca) {	
+		return veiculoRepository.findByMarca(marca);
+	}
 }

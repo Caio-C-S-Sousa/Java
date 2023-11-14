@@ -47,28 +47,4 @@ public class AppController
 				
 		return showHome(model);	
 	}
-	
-	/*
-	@GetMapping(value = "/jogo/lista")
-	public String obterListaJogo(Model model) 
-	{
-		var listagem = jogoService.obterLista();
-		
-		model.addAttribute("listagem", listagem);
-		model.addAttribute("titulo", "Jogos");
-				
-		return showHome(model);	
-	}
-	*/
-	
-	@GetMapping(value = "/veiculo/lista")
-	public String obterListaVeiculo(Model model) 
-	{
-		var listagem = veiculoService.obterLista();
-		
-		model.addAttribute("listagem", listagem);
-		model.addAttribute("titulo", "Veiculos");
-				
-		return showHome(model);	
-	}	
 }

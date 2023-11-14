@@ -7,5 +7,5 @@ import br.edu.infnet.appvenda.model.domain.Veiculo;
 @Repository
 public interface VeiculoRepository extends CrudRepository<Veiculo, Integer>
 {
-
+	Veiculo findByMarca(String marca);
 }
