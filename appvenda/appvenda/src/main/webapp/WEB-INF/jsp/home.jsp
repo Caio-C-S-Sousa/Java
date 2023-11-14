@@ -64,6 +64,24 @@
 				</tbody>
 			</table>
 		</c:if>
+		
+		<c:if test="${not empty informacoes}">		
+			<p>Gestão de vendas de produtos:</p>
+			<table class="table">
+				<thead class="table-dark">
+					<tr>
+						<th>informacoes</th>				
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="item" items="${informacoes}">
+						<tr>
+							<td>${item}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
 
 		<c:if test="${not empty objeto}">
 			<h2>AppVenda</h2>
