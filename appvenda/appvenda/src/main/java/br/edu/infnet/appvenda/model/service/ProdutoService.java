@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.edu.infnet.appvenda.model.domain.Produto;
+import br.edu.infnet.appvenda.model.domain.Veiculo;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.repository.ProdutoRepository;
 
@@ -34,4 +35,8 @@ public class ProdutoService {
 	public void excluir(Integer id) {		
 		produtoRepository.deleteById(id);
 	}	
+	
+	public Produto pesquisar(String descricao) {	
+		return produtoRepository.findByDescricao(descricao);
+	}
 }
