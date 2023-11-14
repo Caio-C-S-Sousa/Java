@@ -84,8 +84,6 @@
 		</c:if>
 
 		<c:if test="${not empty objeto}">
-			<h2>AppVenda</h2>
-			<p>Gestão de vendas de produtos:</p>
 			<div class="alert alert-success">
 				<strong>Sucesso!</strong> ${objeto}
 			</div>

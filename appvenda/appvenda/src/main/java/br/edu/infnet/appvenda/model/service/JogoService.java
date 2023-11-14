@@ -28,4 +28,12 @@ public class JogoService {
 	public long size() {	
 		return jogoRepository.count();
 	}	
+	
+	public void excluir(Integer id) {		
+		jogoRepository.deleteById(id);
+	}	
+	
+	public Jogo pesquisar(String nome) {	
+		return jogoRepository.findByNome(nome);
+	}	
 }

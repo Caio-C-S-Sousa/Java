@@ -30,4 +30,8 @@ public class ProdutoService {
 	public long size() {	
 		return produtoRepository.count();
 	}	
+	
+	public void excluir(Integer id) {		
+		produtoRepository.deleteById(id);
+	}	
 }

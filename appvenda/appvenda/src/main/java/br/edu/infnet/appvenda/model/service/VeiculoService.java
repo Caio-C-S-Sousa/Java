@@ -29,4 +29,8 @@ public class VeiculoService {
 	public long size() {	
 		return veiculoRepository.count();
 	}	
+	
+	public void excluir(Integer id) {		
+		veiculoRepository.deleteById(id);
+	}	
 }

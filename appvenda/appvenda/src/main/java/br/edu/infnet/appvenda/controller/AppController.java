@@ -48,6 +48,7 @@ public class AppController
 		return showHome(model);	
 	}
 	
+	/*
 	@GetMapping(value = "/jogo/lista")
 	public String obterListaJogo(Model model) 
 	{
@@ -58,6 +59,7 @@ public class AppController
 				
 		return showHome(model);	
 	}
+	*/
 	
 	@GetMapping(value = "/veiculo/lista")
 	public String obterListaVeiculo(Model model) 
