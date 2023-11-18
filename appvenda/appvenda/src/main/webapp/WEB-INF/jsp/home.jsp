@@ -81,7 +81,6 @@
 			</form>
 
 			<c:if test="${not empty informacoes}">
-				<p>Gestão de vendas de produtos:</p>
 				<table class="table">
 					<thead class="table-dark">
 						<tr>
