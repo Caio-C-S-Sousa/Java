@@ -33,7 +33,7 @@ public class ProdutoController {
 		return appController.showHome(model);
 	}
 	
-	@GetMapping(value = "/produto/pesquisar")
+	@GetMapping(value = "/informacao/incluir")
 	public String pesquisar(Model model, String campoBusca) 
 	{
 		Produto produto = produtoService.pesquisar(campoBusca);
