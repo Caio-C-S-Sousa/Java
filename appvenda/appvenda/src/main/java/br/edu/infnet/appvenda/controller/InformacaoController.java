@@ -19,9 +19,4 @@ public class InformacaoController {
 			
 		return "redirect:/";
 	}
-	
-	/*@GetMapping(value = "/informacao/lista")
-	public List<Informacao> obterLista(){
-		return informacaoService.obterLista();		
-	}*/
 }
